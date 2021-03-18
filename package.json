@@ -1,0 +1,21 @@
+{
+  "name": "furribot",
+  "version": "1.0.0",
+  "description": "Discord Bot Made In Detritus",
+  "main": "dist/main.js",
+  "scripts": {
+    "compile": "npx tsc",
+    "start": "yarn run compile && node ."
+  },
+  "keywords": [],
+  "author": "hayper",
+  "license": "MIT",
+  "dependencies": {
+    "detritus-client": "^0.13.0",
+    "dotenv": "^8.2.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.33"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+dist/
+
+/configuration/config.json
+/configuration/.env
+furriBot.iml
