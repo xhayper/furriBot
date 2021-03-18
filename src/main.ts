@@ -1,9 +1,7 @@
-import {BaseConfiguration} from "./Base/BaseConfiguration";
-
-console.clear();
-
 import * as path from "path";
+
 import {ClusterClient, CommandClient, ShardClient} from "detritus-client";
+import {BaseConfiguration} from "./Base/BaseConfiguration";
 
 require("dotenv").config({
     path: path.resolve(__dirname, "../configuration/.env")
