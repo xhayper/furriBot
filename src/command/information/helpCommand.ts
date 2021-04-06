@@ -38,7 +38,7 @@ export default class extends Command.Command {
                 embed.title = command.name;
                 if (command.metadata.category) embed.fields.push({
                     name: "Category",
-                    value: command.metadata.category,
+                    value: command.metadata.category.charAt(0).toUpperCase() + command.metadata.category.substr(1).toLowerCase(),
                     inline: true
                 });
                 if (command.metadata.description) embed.fields.push({
