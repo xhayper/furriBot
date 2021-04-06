@@ -24,7 +24,7 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-detritus-client-rest@^0.9.3:
+detritus-client-rest@^0.9.3, detritus-client-rest@^0.9.4:
   version "0.9.4"
   resolved "https://registry.yarnpkg.com/detritus-client-rest/-/detritus-client-rest-0.9.4.tgz#7bc9c04017e71061e75416178331c60e9ea591eb"
   integrity sha512-M1BPpj/6pXOGx976KbqO9nhDzJWQ37B9RVoCb0W36wO4oIoZobASPJrcZh5VL/hlQN/poFJGQrGm8+WP6KGKlQ==
@@ -87,11 +87,6 @@ mime-types@^2.1.12:
   integrity sha512-Y/jMt/S5sR9OaqteJtslsFZKWOIIqMACsJSiHghlCAyhf7jfVYjKBmLiX8OgpWeW+fjJ2b+Az69aPFPkUOY6xQ==
   dependencies:
     mime-db "1.46.0"
-
-moment@^2.29.1:
-  version "2.29.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
-  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 node-fetch@^2.6.1:
   version "2.6.1"

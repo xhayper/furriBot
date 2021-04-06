@@ -1,33 +1,30 @@
+import * as dotenv from "dotenv";
 import * as path from "path";
 
-import {ClusterClient, CommandClient, ShardClient} from "detritus-client";
-import {BaseConfiguration} from "./Base/BaseConfiguration";
-
-require("dotenv").config({
-    path: path.resolve(__dirname, "../configuration/.env")
+dotenv.config({
+    path: path.resolve(__dirname, "../Configuration/.env")
 });
 
-if (process.env.DISCORD_TOKEN == null) throw new ReferenceError("DISCORD_TOKEN isn't defined in process.env");
+if (process.env.DISCORD_TOKEN == null) throw new ReferenceError("process.env.DISCORD_TOKEN isn't defined!")
 
-const config:BaseConfiguration = require(path.resolve(__dirname, "../configuration/config.json"));
+import {CommandClient} from 'detritus-client';
+import {BaseConfiguration} from "./base/baseConfiguration";
+
+const config: BaseConfiguration = require(path.resolve(__dirname, "../configuration/config.json"));
 
 const commandClient = new CommandClient(process.env.DISCORD_TOKEN, {
-    useClusterClient: true,
-    prefix: config.prefix
+    prefix: config.prefix,
+    useClusterClient: true
 });
 
-if (commandClient.client instanceof ShardClient) throw new TypeError("commandClient is ShardClient for some reason?");
+commandClient.addMultipleIn(path.resolve(__dirname, "./command"), {
+    subdirectories: true,
+    isAbsolute: true
+}).then();
 
-const client:ClusterClient = commandClient.client;
-
-client.on('ready', () => {
-    commandClient.addMultipleIn(path.resolve(__dirname, "./Command"), {
-        subdirectories: true,
-        isAbsolute: true
-    }).then();
-    console.log(`Ready!`);
+commandClient.client.on("ready", () => {
+    commandClient.addMentionPrefixes();
+    console.info("Ready!");
 });
 
-(async () => {
-    await commandClient.run();
-})();
+commandClient.run().then();

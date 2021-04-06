@@ -7,13 +7,12 @@
     "compile": "npx tsc",
     "start": "yarn run compile && node ."
   },
-  "keywords": [],
   "author": "hayper",
   "license": "MIT",
   "dependencies": {
     "detritus-client": "^0.13.0",
-    "dotenv": "^8.2.0",
-    "moment": "^2.29.1"
+    "detritus-client-rest": "^0.9.4",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.33"
