@@ -10,7 +10,7 @@ if (process.env.DISCORD_TOKEN == null) throw new ReferenceError("process.env.DIS
 import {CommandClient} from 'detritus-client';
 import {BaseConfiguration} from "./base/baseConfiguration";
 
-const config: BaseConfiguration = require(path.resolve(__dirname, "../configuration/config.json"));
+const config:BaseConfiguration = require(path.resolve(__dirname, "../Configuration/config.json"));
 
 const commandClient = new CommandClient(process.env.DISCORD_TOKEN, {
     prefix: config.prefix,
