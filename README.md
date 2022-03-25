@@ -1,2 +1,2 @@
 # FurriBot
-Discord Bot Made In Detritus
+Furry themed discord bot made in Detritus
